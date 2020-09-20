@@ -348,3 +348,17 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+Migration.txt
+
+IS4_URIs.txt
+
+ICSApp.IncidentService/ICSApp.IncidentService.WebClient/appsettings.json
+
+ICSApp.ActivityService/ICSApp.ActivityService.WebClient/appsettings.json
+
+ICSApp.IS4/src/ICSApp.IS4.Admin.Api/appsettings.json
+
+ICSApp.IS4/src/ICSApp.IS4.Admin/appsettings.json
+
+ICSApp.IS4/src/ICSApp.IS4.STS.Identity/appsettings.json

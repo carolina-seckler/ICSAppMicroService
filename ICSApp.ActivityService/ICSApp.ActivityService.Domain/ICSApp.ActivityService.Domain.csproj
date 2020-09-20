@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ICSApp.ActivityService.Notification\ICSApp.ActivityService.Notification.csproj" />
+  </ItemGroup>
+
+</Project>

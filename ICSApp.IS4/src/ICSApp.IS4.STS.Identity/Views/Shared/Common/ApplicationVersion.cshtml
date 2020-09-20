@@ -1,0 +1,16 @@
+﻿@using System.Reflection
+@using ICSApp.IS4.STS.Identity
+
+@{
+    var runtimeVersion = typeof(Startup)
+        .GetTypeInfo()
+        .Assembly
+        .GetCustomAttribute<AssemblyInformationalVersionAttribute>()?.InformationalVersion;
+}
+
+@runtimeVersion
+
+
+
+
+
