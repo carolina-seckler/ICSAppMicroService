@@ -7,7 +7,7 @@ namespace ICSApp.IncidentService.Domain.Entities
 {
     public class Member : Notifiable, IAuditable
     {
-        public Member(string name, int idIncident, int idSection, int idFunction, int idUser)
+        public Member(string name, int idIncident, int idSection, int idFunction, Guid idUser)
         {
             Name = name;
             IdIncident = idIncident;
@@ -25,7 +25,7 @@ namespace ICSApp.IncidentService.Domain.Entities
         public int IdFunction { get; }
         public virtual Function Function { get; set; }
         public int IdSection { get; set; }
-        public int IdUser { get; set; }
+        public Guid IdUser { get; set; }
         public string UsuarioInsercao { get; set; }
         public DateTime DataHoraInsercao { get; set; }
         public string UsuarioUltimaAtualizacao { get; set; }

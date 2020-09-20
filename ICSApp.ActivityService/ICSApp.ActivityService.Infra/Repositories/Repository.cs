@@ -7,11 +7,11 @@ using System.Text;
 
 namespace ICSApp.ActivityService.Infra.Repositories
 {
-    public class ActivityRepository : IRepository
+    public class Repository : IRepository
     {
         private readonly DbContext _context;
 
-        public ActivityRepository(DbContext context)
+        public Repository(DbContext context)
         {
             _context = context;
         }

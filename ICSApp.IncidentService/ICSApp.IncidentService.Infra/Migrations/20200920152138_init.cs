@@ -49,7 +49,7 @@ namespace ICSApp.IncidentService.Infra.Migrations
                     IdIncident = table.Column<int>(nullable: false),
                     IdFunction = table.Column<int>(nullable: false),
                     IdSection = table.Column<int>(nullable: false),
-                    IdUser = table.Column<int>(nullable: false),
+                    IdUser = table.Column<byte[]>(nullable: false),
                     UsuarioInsercao = table.Column<string>(nullable: true),
                     DataHoraInsercao = table.Column<DateTime>(nullable: false),
                     UsuarioUltimaAtualizacao = table.Column<string>(nullable: true),

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ICSApp.IncidentService.Infra.Migrations
 {
     [DbContext(typeof(IncidentDbContext))]
-    [Migration("20200919194554_init")]
+    [Migration("20200920152138_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -89,8 +89,9 @@ namespace ICSApp.IncidentService.Infra.Migrations
                     b.Property<int>("IdSection")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdUser")
-                        .HasColumnType("int");
+                    b.Property<byte[]>("IdUser")
+                        .IsRequired()
+                        .HasColumnType("varbinary(16)");
 
                     b.Property<string>("Name")
                         .IsRequired()

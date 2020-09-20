@@ -1,4 +1,5 @@
 using ICSApp.ActivityService.Application.Interfaces;
+using ICSApp.ActivityService.Infra;
 using ICSApp.ActivityService.Infra.Context;
 using ICSApp.ActivityService.Infra.Repositories;
 using ICSApp.ActivityService.Infra.UnitsOfWork;
@@ -39,15 +40,12 @@ namespace ICSApp.ActivityService.WebClient
                 client.BaseAddress = new Uri("https://localhost:44334/");
             });
 
-            services.AddScoped<IUnitOfWork, ActivityUnitOfWork>();
-            services.AddScoped<IUnitOfWork, SectionUnitOfWork>();
-            services.AddScoped<IUnitOfWork, StatusUnitOfWork>();
-            services.AddScoped<IRepository, ActivityRepository>();
-            services.AddScoped<IRepository, SectionRepository>();
-            services.AddScoped<IRepository, StatusRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IRepository, Repository>();
             services.AddTransient<IActivityService, Application.Services.ActivityService>();
             services.AddTransient<ISectionService, Application.Services.SectionService>();
             services.AddTransient<IStatusService, Application.Services.StatusService>();
+            services.AddSingleton<IUserService, UserService>();
 
             services.AddControllers();
 

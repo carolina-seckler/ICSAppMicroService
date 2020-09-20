@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ICSApp.ActivityService.Infra.Migrations
 {
     [DbContext(typeof(ActivityDbContext))]
-    [Migration("20200919201340_init")]
+    [Migration("20200920170013_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -64,7 +64,7 @@ namespace ICSApp.ActivityService.Infra.Migrations
 
                     b.HasIndex("IdStatus");
 
-                    b.ToTable("Incident");
+                    b.ToTable("Activity");
                 });
 
             modelBuilder.Entity("ICSApp.ActivityService.Domain.Entities.Section", b =>

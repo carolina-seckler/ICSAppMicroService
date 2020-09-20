@@ -8,18 +8,25 @@ using System.Text;
 
 namespace ICSApp.ActivityService.Infra.UnitsOfWork
 {
-    public class SectionUnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         readonly DbContext _dbContext;
+        private readonly IUserService userService;
 
-        public SectionUnitOfWork(DbContext dbContext)
+        public UnitOfWork(DbContext dbContext, IUserService userService)
         {
             _dbContext = dbContext;
+            this.userService = userService;
         }
 
         public void Commit()
         {
-            var user_name = "user";
+            var user_name = userService.Name;
+
+            if (user_name == null)
+            {
+                throw new NullReferenceException("Usuário não pode ser nulo.");
+            }
 
             var entries = _dbContext.ChangeTracker.Entries().Where(e => e.State == EntityState.Added || e.State == EntityState.Modified)
                 .Where(e => e.Entity is IAuditable);

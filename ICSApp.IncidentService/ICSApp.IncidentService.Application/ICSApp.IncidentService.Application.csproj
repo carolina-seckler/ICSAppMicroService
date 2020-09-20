@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Interfaces\IUserProfile.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\ICSApp.IncidentService.Domain\ICSApp.IncidentService.Domain.csproj" />
   </ItemGroup>
 

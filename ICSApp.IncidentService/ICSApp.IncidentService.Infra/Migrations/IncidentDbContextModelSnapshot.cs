@@ -87,8 +87,9 @@ namespace ICSApp.IncidentService.Infra.Migrations
                     b.Property<int>("IdSection")
                         .HasColumnType("int");
 
-                    b.Property<int>("IdUser")
-                        .HasColumnType("int");
+                    b.Property<byte[]>("IdUser")
+                        .IsRequired()
+                        .HasColumnType("varbinary(16)");
 
                     b.Property<string>("Name")
                         .IsRequired()

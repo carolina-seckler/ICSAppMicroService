@@ -1,17 +1,17 @@
-﻿using ICSApp.ActivityService.Application.Interfaces;
+﻿using ICSApp.IncidentService.Application.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace ICSApp.ActivityService.Infra.Repositories
+namespace ICSApp.IncidentService.Infra.Repositories
 {
-    public class SectionRepository : IRepository
+    public class Repository : IRepository
     {
         private readonly DbContext _context;
 
-        public SectionRepository(DbContext context)
+        public Repository(DbContext context)
         {
             _context = context;
         }

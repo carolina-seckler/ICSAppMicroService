@@ -62,7 +62,7 @@ namespace ICSApp.ActivityService.Infra.Migrations
 
                     b.HasIndex("IdStatus");
 
-                    b.ToTable("Incident");
+                    b.ToTable("Activity");
                 });
 
             modelBuilder.Entity("ICSApp.ActivityService.Domain.Entities.Section", b =>

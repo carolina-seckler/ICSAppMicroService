@@ -1,8 +1,5 @@
 using ICSApp.ActivityService.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ICSApp.ActivityService.Infra.Context
 {
@@ -14,7 +11,9 @@ namespace ICSApp.ActivityService.Infra.Context
         {
         }
 
-        public virtual DbSet<Activity> Incident { get; set; }
+        public virtual DbSet<Activity> Activity { get; set; }
+        public virtual DbSet<Status> Status { get; set; }
+        public virtual DbSet<Section> Section { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -69,7 +69,7 @@ namespace ICSApp.ActivityService.WebClient.Controllers
         public IActionResult GetIncident()
         {
             var client = httpClientFactory.CreateClient("Incident Microservice");
-            var result = client.GetAsync("").Result;
+            var result = client.GetAsync(client.BaseAddress + "Incident").Result;
             if (!result.IsSuccessStatusCode)
                 throw new Exception("");
 

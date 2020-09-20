@@ -35,7 +35,7 @@ namespace ICSApp.ActivityService.Infra.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Incident",
+                name: "Activity",
                 columns: table => new
                 {
                     IdActivity = table.Column<int>(nullable: false)
@@ -53,15 +53,15 @@ namespace ICSApp.ActivityService.Infra.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Incident", x => x.IdActivity);
+                    table.PrimaryKey("PK_Activity", x => x.IdActivity);
                     table.ForeignKey(
-                        name: "FK_Incident_Section_IdSection",
+                        name: "FK_Activity_Section_IdSection",
                         column: x => x.IdSection,
                         principalTable: "Section",
                         principalColumn: "IdSection",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Incident_Status_IdStatus",
+                        name: "FK_Activity_Status_IdStatus",
                         column: x => x.IdStatus,
                         principalTable: "Status",
                         principalColumn: "IdStatus",
@@ -69,20 +69,20 @@ namespace ICSApp.ActivityService.Infra.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_Incident_IdSection",
-                table: "Incident",
+                name: "IX_Activity_IdSection",
+                table: "Activity",
                 column: "IdSection");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Incident_IdStatus",
-                table: "Incident",
+                name: "IX_Activity_IdStatus",
+                table: "Activity",
                 column: "IdStatus");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "Incident");
+                name: "Activity");
 
             migrationBuilder.DropTable(
                 name: "Section");

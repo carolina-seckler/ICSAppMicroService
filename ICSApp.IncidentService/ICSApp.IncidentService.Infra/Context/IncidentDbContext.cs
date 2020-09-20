@@ -14,6 +14,8 @@ namespace ICSApp.IncidentService.Infra.Context
         }
 
         public virtual DbSet<Incident> Incident { get; set; }
+        public virtual DbSet<Function> Function { get; set; }
+        public virtual DbSet<Member> Member { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

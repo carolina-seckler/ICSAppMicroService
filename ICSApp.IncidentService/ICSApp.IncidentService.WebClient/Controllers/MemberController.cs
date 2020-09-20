@@ -3,6 +3,7 @@ using ICSApp.IncidentService.Application.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
 using System.Linq;
 using System.Net.Http;
 
@@ -49,6 +50,7 @@ namespace ICSApp.IncidentService.WebClient.Controllers
         [HttpPost]
         public IActionResult Insert([FromBody] MemberModel model)
         {
+            model.IdUser = Guid.Parse(User.FindFirst("sub")?.Value);
             var notifications = service.Insert(model);
             if (notifications != null)
                 return BadRequest(notifications);
@@ -71,11 +73,11 @@ namespace ICSApp.IncidentService.WebClient.Controllers
             return Ok();
         }
 
-        [HttpGet("activity")]
-        public IActionResult GetActivity()
+        [HttpGet("section")]
+        public IActionResult GetSection()
         {
             var client = httpClientFactory.CreateClient("Activity Microservice");
-            var result = client.GetAsync(client.BaseAddress + "Activity/helloworld").Result;
+            var result = client.GetAsync(client.BaseAddress + "section").Result;
             if (!result.IsSuccessStatusCode)
                 throw new System.Exception("");
 

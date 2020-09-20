@@ -4,7 +4,6 @@ using ICSApp.IncidentService.Domain.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace ICSApp.IncidentService.Application.Services
 {
@@ -58,7 +57,7 @@ namespace ICSApp.IncidentService.Application.Services
 
         public IReadOnlyCollection<Notification.Notification> Insert(MemberModel model)
         {
-            Member obj = new Member(model.Name, model.IdIncident, model.IdSection, model.IdFunction, model.IdUser);
+            Member obj = new Member(model.Name, model.IdIncident, model.IdSection, model.IdFunction, model.IdUser ?? Guid.NewGuid());
 
             if (obj.Notifications.Count() > 0)
             {
@@ -71,7 +70,7 @@ namespace ICSApp.IncidentService.Application.Services
 
         public IReadOnlyCollection<Notification.Notification> Update(MemberModel model)
         {
-            Member obj = new Member(model.Name, model.IdIncident, model.IdSection, model.IdFunction, model.IdUser);
+            Member obj = new Member(model.Name, model.IdIncident, model.IdSection, model.IdFunction, model.IdUser ?? Guid.NewGuid());
             if (obj.Notifications.Count() > 0)
             {
                 return obj.Notifications;

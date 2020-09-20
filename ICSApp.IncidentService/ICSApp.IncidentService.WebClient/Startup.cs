@@ -1,4 +1,5 @@
 using ICSApp.IncidentService.Application.Interfaces;
+using ICSApp.IncidentService.Infra;
 using ICSApp.IncidentService.Infra.Context;
 using ICSApp.IncidentService.Infra.Repositories;
 using ICSApp.IncidentService.Infra.UnitsOfWork;
@@ -39,15 +40,12 @@ namespace ICSApp.IncidentService.WebClient
                 client.BaseAddress = new Uri("https://localhost:44300/");
             });
 
-            services.AddScoped<IUnitOfWork, IncidentUnitOfWork>();
-            services.AddScoped<IUnitOfWork, MemberUnitOfWork>();
-            services.AddScoped<IUnitOfWork, FunctionUnitOfWork>();
-            services.AddScoped<IRepository, IncidentRepository>();
-            services.AddScoped<IRepository, MemberRepository>();
-            services.AddScoped<IRepository, FunctionRepository>();
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IRepository, Repository>();
             services.AddTransient<IIncidentService, Application.Services.IncidentService>();
             services.AddTransient<IMemberService, Application.Services.MemberService>();
             services.AddTransient<IFunctionService, Application.Services.FunctionService>();
+            services.AddSingleton<IUserService, UserService>();
 
             services.AddControllers();
 
@@ -83,7 +81,7 @@ namespace ICSApp.IncidentService.WebClient
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllers().RequireAuthorization();
             });
 
             app.UseMvc();

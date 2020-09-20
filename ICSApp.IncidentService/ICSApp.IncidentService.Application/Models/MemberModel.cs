@@ -11,6 +11,6 @@ namespace ICSApp.IncidentService.Application.Models
         public int IdIncident { get; set; }
         public int IdFunction { get; set; }
         public int IdSection { get; set; }
-        public int IdUser { get; set; }
+        public Guid? IdUser { get; set; }
     }
 }
