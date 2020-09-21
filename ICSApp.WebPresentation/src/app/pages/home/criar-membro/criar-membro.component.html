@@ -1,0 +1,70 @@
+<p-toast position="top-right"
+  [showTransitionOptions]="'250ms'"
+  [hideTransitionOptions]="'1000ms'"
+  [showTransformOptions]="'translateX(100%)'"
+  baseZIndex="9999999999"></p-toast>
+<form [formGroup]="formMember">
+    <div class="p-field p-col-12 p-md-4">
+      <div class="p-inputgroup">
+        <span class="p-inputgroup-addon">
+          <i class="pi pi-user"></i>
+        </span>
+        <span class="p-float-label">
+          <input pInputText type="text"
+          id="name"
+          formControlName="name">
+          <label for="name">Nome do Membro</label>
+        </span>
+      </div>
+    </div>
+    <div class="p-field p-col-12 p-md-4">
+        <div class="p-inputgroup" >
+          <span class="p-inputgroup-addon">
+            <i class="pi pi-user"></i>
+          </span>
+          <span class="p-float-label">
+            <p-dropdown inputId="idIncident"
+              [autoDisplayFirst]="false"
+              [options]="optIncident"
+              formControlName="idIncident"
+              optionLabel="name"></p-dropdown>
+            <label for="idIncident" >Incidente</label>
+          </span>
+        </div>
+      </div>
+      <div class="p-field p-col-12 p-md-4">
+          <div class="p-inputgroup" >
+            <span class="p-inputgroup-addon">
+              <i class="pi pi-user"></i>
+            </span>
+            <span class="p-float-label">
+              <p-dropdown inputId="idSection"
+                [autoDisplayFirst]="false"
+                [options]="optSection"
+                formControlName="idSection"
+                optionLabel="name"></p-dropdown>
+              <label for="idSection" >Seção</label>
+            </span>
+          </div>
+        </div>
+      <div class="p-field p-col-12 p-md-4">
+          <div class="p-inputgroup" >
+            <span class="p-inputgroup-addon">
+              <i class="pi pi-user"></i>
+            </span>
+            <span class="p-float-label">
+              <p-dropdown inputId="idFunction"
+                [autoDisplayFirst]="false"
+                [options]="optFunction"
+                formControlName="idFunction"
+                optionLabel="name"></p-dropdown>
+              <label for="idFunction" >Função</label>
+            </span>
+          </div>
+        </div>
+  </form>
+  <div class="row justify-content-md-center">
+    <div class="form-group">
+      <p-button label="Salvar" icon="pi pi-save" iconPos="center" (onClick)="salvar()"></p-button>
+    </div>
+  </div>

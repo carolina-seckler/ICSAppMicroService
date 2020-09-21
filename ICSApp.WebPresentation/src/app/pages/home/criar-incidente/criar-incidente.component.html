@@ -1,0 +1,32 @@
+<form [formGroup]="formIncident">
+  <div class="p-field p-col-12 p-md-4">
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon">
+        <i class="pi pi-user"></i>
+      </span>
+      <span class="p-float-label">
+        <input pInputText type="text"
+        id="name"
+        formControlName="name">
+        <label for="name">Nome do Incidente</label>
+      </span>
+    </div>
+  </div>
+  <div class="p-field p-col-12 p-md-4">
+    <div class="p-inputgroup">
+      <span class="p-inputgroup-addon">
+        <i class="pi pi-user"></i>
+      </span>
+      <span class="p-float-label">
+        <p-calendar inputId="calendar"
+        formControlName="incidentDate"></p-calendar>
+        <label for="calendar">Data do Incidente</label>
+      </span>
+    </div>
+  </div>
+</form>
+<div class="row justify-content-md-center">
+  <div class="form-group">
+    <p-button label="Salvar" icon="pi pi-save" iconPos="left" (onClick)="salvar()"></p-button>
+  </div>
+</div>

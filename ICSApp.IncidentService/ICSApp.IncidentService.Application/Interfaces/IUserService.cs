@@ -9,5 +9,7 @@ namespace ICSApp.IncidentService.Application.Interfaces
     {
         public Guid IdUser { get; set; }
         public string Name { get; set; }
+
+        public string SignIn(string username, string password);
     }
 }

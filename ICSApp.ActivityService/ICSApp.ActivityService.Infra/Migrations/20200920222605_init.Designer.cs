@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ICSApp.ActivityService.Infra.Migrations
 {
     [DbContext(typeof(ActivityDbContext))]
-    [Migration("20200920170013_init")]
+    [Migration("20200920222605_init")]
     partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

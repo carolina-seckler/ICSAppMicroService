@@ -1,0 +1,147 @@
+<p-toast position="top-right"
+  [showTransitionOptions]="'250ms'"
+  [hideTransitionOptions]="'1000ms'"
+  [showTransformOptions]="'translateX(100%)'"
+  baseZIndex="999"></p-toast>
+<div class="features-boxed">
+  <div class="container">
+    <!-- Start: Intro -->
+    <div class="intro">
+      <h2 class="text-center">Olá {{usuario}}</h2>
+      <p class="text-center">{{dateTime}}</p>
+    </div>
+    <!-- Start: Incident -->
+    <div class="row justify-content-center features">
+      <div class="col-sm-6 col-md-5 col-lg-4 item">
+        <div class="box"><i class="fas fa-bomb icon"></i>
+          <h3 class="name">Incidente</h3>
+          <div class="row justify-content-md-center">
+            <div class="col-sm">
+              <p-button icon="pi pi-search" iconPos="left" class="p-button-text"
+              label="Novo" (onClick)="criarIncidente()" ></p-button>
+            </div>
+            <div  class="col-sm">
+              <p-button icon="pi pi-search" iconPos="left" class="p-button-text"
+              label="Listar" (onClick)="listarIncidentes()"></p-button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Start: Member -->
+      <div class="col-sm-6 col-md-5 col-lg-4 item">
+        <div class="box"><i class="fas fa-user icon"></i>
+          <h3 class="name">Membro</h3>
+          <div class="row justify-content-md-center">
+            <div class="col-sm">
+              <p-button icon="pi pi-search" iconPos="left" class="p-button-text"
+              label="Novo" (onClick)="criarMembro()" ></p-button>
+            </div>
+            <div  class="col-sm">
+              <p-button icon="pi pi-search" iconPos="left" class="p-button-text"
+              label="Listar" (onClick)="listarMembros()"></p-button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Start: Conta -->
+      <div class="col-sm-6 col-md-5 col-lg-4 item">
+        <div class="box"><i class="fas fa-list-ul icon"></i>
+          <h3 class="name">Atividade</h3>
+          <div class="row justify-content-md-center">
+            <div class="col-sm">
+              <p-button icon="pi pi-search" iconPos="left" class="p-button-text"
+              label="Novo" (onClick)="criarAtividade()" ></p-button>
+            </div>
+            <div  class="col-sm">
+              <p-button icon="pi pi-search" iconPos="left" class="p-button-text"
+              label="Listar" (onClick)="listarAtividades()"></p-button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Start: Limite -->
+      <div class="col-sm-6 col-md-5 col-lg-4 item">
+        <div class="box"><i class="fas fa-helicopter icon"></i>
+          <h3 class="name">Recurso</h3>
+          <div class="row justify-content-md-center">
+            <div class="col-sm">
+              <p-button icon="pi pi-search" iconPos="left" class="p-button-text"
+              label="Novo" (onClick)="criarRecurso()" ></p-button>
+            </div>
+            <div  class="col-sm">
+              <p-button icon="pi pi-search" iconPos="left" class="p-button-text"
+              label="Listar" (onClick)="listarRecursos()"></p-button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Start: Rebel -->
+      <div class="col-sm-6 col-md-5 col-lg-4 item">
+        <div class="box"><i class="fas fa-chalkboard icon"></i>
+          <h3 class="name">Situação</h3>
+          <div class="row justify-content-md-center">
+            <div class="col-sm">
+              <p-button icon="pi pi-search" iconPos="left" class="p-button-text"
+              label="Mostrar" (onClick)="montarSituacao()" ></p-button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Start: Sair -->
+      <div class="col-sm-6 col-md-5 col-lg-4 item">
+        <div class="box"><i class="fas fa-running icon"></i>
+          <h3 class="name">Sair</h3>
+          <div class="row justify-content-md-center">
+            <div class="col-sm">
+              <p-button icon="pi pi-search" iconPos="left" class="p-button-text"
+              label="Deslogar" (onClick)="logout()" ></p-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf=displayNovoIncidenteModal>
+  <p-dialog header="Criar Incidente" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+  [(visible)]="displayNovoIncidenteModal" [draggable]="true" [resizable]="true">
+  <app-criar-incidente></app-criar-incidente>
+  <ng-template pTemplate="footer">
+    <!-- <p-button icon="pi pi-times" (click)="displayNovoIncidenteModal=false" label="Sair"></p-button> -->
+  </ng-template>
+  </p-dialog>
+</div>
+
+<div *ngIf=displayNovoMembroModal>
+  <p-dialog header="Criar Membro" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+  [(visible)]="displayNovoMembroModal" [draggable]="true" [resizable]="true">
+  <app-criar-membro></app-criar-membro>
+  <ng-template pTemplate="footer">
+    <!-- <p-button icon="pi pi-times" (onClick)="displayNovoMembroModal=false" label="Sair"></p-button> -->
+  </ng-template>
+  </p-dialog>
+</div>
+
+<div *ngIf=displayNovaAtividadeModal>
+  <p-dialog header="Criar Atividade" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+  [(visible)]="displayNovaAtividadeModal" [draggable]="true" [resizable]="true">
+  <app-criar-atividade></app-criar-atividade>
+  <ng-template pTemplate="footer">
+    <!-- <p-button icon="pi pi-times" (click)="displayNovaAtividadeModal=false" label="Sair"></p-button> -->
+  </ng-template>
+  </p-dialog>
+</div>
+
+<div *ngIf=displayListarIncidenteModal>
+    <p-dialog header="Listar Incidente" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+    [(visible)]="displayListarIncidenteModal" [draggable]="true" [resizable]="true">
+    <app-listar-incidente></app-listar-incidente>
+    <ng-template pTemplate="footer">
+      <!-- <p-button icon="pi pi-times" (click)="displayListarIncidenteModal=false" label="Sair"></p-button> -->
+    </ng-template>
+    </p-dialog>
+  </div>
+
+<!-- <h3 class="name">Usuário</h3>
+  <p class="description">...</p> -->

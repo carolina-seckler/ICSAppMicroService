@@ -58,10 +58,22 @@ namespace ICSApp.ActivityService.WebClient
                     options.ApiName = "ActivityMicroservice_ResourceApi";
 
                 });
+
+            services.AddCors(c => c.AddPolicy(
+                "CorsConfiguration", (policy) =>
+                {
+                    policy.AllowCredentials()
+                          .AllowAnyHeader()
+                          .AllowAnyMethod()
+                          .WithOrigins("http://localhost:4200",
+                                       "http://localhost");
+                }));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors("CorsConfiguration");
+
             app.UseAuthentication();
 
             if (env.IsDevelopment())
@@ -77,7 +89,7 @@ namespace ICSApp.ActivityService.WebClient
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllers().RequireAuthorization();
             });
         }
     }

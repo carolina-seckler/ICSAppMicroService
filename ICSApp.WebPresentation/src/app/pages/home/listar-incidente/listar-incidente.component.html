@@ -1,0 +1,28 @@
+<p-table [columns]="cols" [value]="incidents" styleClass="p-datatable-responsive-demo">
+  <ng-template pTemplate="header" let-columns>
+    <tr>
+      <th *ngFor="let col of columns">
+        {{col.header}}
+      </th>
+      <th></th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-rowData let-columns="columns">
+    <tr>
+      <td *ngFor="let col of columns">
+        <span class="p-column-title">{{col.header}}</span>
+        {{rowData[col.field]}}
+      </td>
+      <td>
+        <div class="row">
+          <div class=col>
+            <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-success" (click)="update(rowData)"></button>
+          </div>
+          <div class=col>
+            <button pButton pRipple type="button" icon="pi pi-times" class="p-button-rounded p-button-danger" (click)="remove(rowData)"></button>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
