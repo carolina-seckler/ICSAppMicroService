@@ -9,7 +9,6 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ICSApp.ActivityService.WebClient.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class UserController : ControllerBase

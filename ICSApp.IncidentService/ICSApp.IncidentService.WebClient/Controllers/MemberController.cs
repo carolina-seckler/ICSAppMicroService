@@ -9,7 +9,6 @@ using System.Net.Http;
 
 namespace ICSApp.IncidentService.WebClient.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class MemberController : ControllerBase

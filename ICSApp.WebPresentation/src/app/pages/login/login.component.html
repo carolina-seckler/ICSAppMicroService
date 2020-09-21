@@ -1,0 +1,21 @@
+<p-toast position="top-right"
+  [showTransitionOptions]="'250ms'"
+  [hideTransitionOptions]="'1000ms'"
+  [showTransformOptions]="'translateX(100%)'"
+  baseZIndex="999"></p-toast>
+<div class="login-dark">
+  <form [formGroup]="formLogin">
+    <div class="form-group">
+    <input class="form-control" formControlName="name" type="text" name="xpto01" placeholder="Name"
+        autocomplete="new-name" autofocus="" required="">
+    </div>
+    <div class="form-group">
+      <input class="form-control" formControlName="password" type="password" name="xpto02" placeholder="Password"
+        autocomplete="new-password" required="">
+    </div>
+    <div class="form-group">
+      <button class="btn btn-primary btn-block" type="submit" (click)="login()">Entrar</button>
+    </div>
+    <a class="forgot" href="#">Esqueceu a senha?</a>
+  </form>
+</div>

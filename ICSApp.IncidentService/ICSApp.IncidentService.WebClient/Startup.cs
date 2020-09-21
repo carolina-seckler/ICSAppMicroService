@@ -49,10 +49,6 @@ namespace ICSApp.IncidentService.WebClient
 
             services.AddControllers();
 
-            services.AddMvcCore(opt => {
-                opt.EnableEndpointRouting = false;
-            });
-
             services.AddAuthorization();
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>
@@ -62,10 +58,22 @@ namespace ICSApp.IncidentService.WebClient
                     options.ApiName = "IncidentMicroservice_ResourceApi";
 
                 });
+
+            services.AddCors(c => c.AddPolicy(
+                "CorsConfiguration", (policy) =>
+                {
+                    policy.AllowCredentials()
+                          .AllowAnyHeader()
+                          .AllowAnyMethod()
+                          .WithOrigins("http://localhost:4200",
+                                       "http://localhost");
+                }));
         }
                 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors("CorsConfiguration");
+
             app.UseAuthentication();
 
             if (env.IsDevelopment())
@@ -83,8 +91,6 @@ namespace ICSApp.IncidentService.WebClient
             {
                 endpoints.MapControllers().RequireAuthorization();
             });
-
-            app.UseMvc();
         }
     }
 }

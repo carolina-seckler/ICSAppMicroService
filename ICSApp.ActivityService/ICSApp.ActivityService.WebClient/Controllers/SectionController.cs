@@ -8,7 +8,6 @@ using System.Net.Http;
 
 namespace ICSApp.ActivityService.WebClient.Controllers
 {
-    [Authorize]
     [ApiController]
     [Route("[controller]")]
     public class SectionController : ControllerBase
