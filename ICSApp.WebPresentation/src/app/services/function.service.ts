@@ -27,4 +27,8 @@ export class FunctionService {
   getAll() {
     return this.http.get<any>(API + 'Function');
   }
+
+  getById(request: number){
+    return this.http.get<any>(API + 'Function/' + request);
+  }
 }

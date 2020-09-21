@@ -27,4 +27,8 @@ export class StatusService {
   getAll() {
     return this.http.get<any>(API + 'Status');
   }
+
+  getById(request: number){
+    return this.http.get<any>(API + 'Status/' + request);
+  }
 }

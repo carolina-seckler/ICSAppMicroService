@@ -143,5 +143,25 @@
     </p-dialog>
   </div>
 
+  <div *ngIf=displayListarMembroModal>
+    <p-dialog header="Listar Incidente" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+    [(visible)]="displayListarMembroModal" [draggable]="true" [resizable]="true">
+    <app-listar-membro></app-listar-membro>
+    <ng-template pTemplate="footer">
+      <!-- <p-button icon="pi pi-times" (click)="displayListarMembroModal=false" label="Sair"></p-button> -->
+    </ng-template>
+    </p-dialog>
+  </div>
+
+  <div *ngIf=displayListarAtividadeModal>
+    <p-dialog header="Listar Incidente" [modal]="true" [style]="{width: '50vw'}" [baseZIndex]="10000"
+    [(visible)]="displayListarAtividadeModal" [draggable]="true" [resizable]="true">
+    <app-listar-atividade></app-listar-atividade>
+    <ng-template pTemplate="footer">
+      <!-- <p-button icon="pi pi-times" (click)="displayListarAtividadeModal=false" label="Sair"></p-button> -->
+    </ng-template>
+    </p-dialog>
+  </div>
+
 <!-- <h3 class="name">Usuário</h3>
   <p class="description">...</p> -->

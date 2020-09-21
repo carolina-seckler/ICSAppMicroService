@@ -13,6 +13,8 @@ import { CriarMembroComponent } from './criar-membro/criar-membro.component';
 import { CriarAtividadeComponent } from './criar-atividade/criar-atividade.component';
 import { TableModule } from 'primeng/table';
 import { ListarIncidenteComponent } from './listar-incidente/listar-incidente.component';
+import { ListarMembroComponent } from './listar-membro/listar-membro.component';
+import { ListarAtividadeComponent } from './listar-atividade/listar-atividade.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { ListarIncidenteComponent } from './listar-incidente/listar-incidente.co
     CriarIncidenteComponent,
     CriarMembroComponent,
     CriarAtividadeComponent,
-    ListarIncidenteComponent
+    ListarIncidenteComponent,
+    ListarMembroComponent,
+    ListarAtividadeComponent
   ],
   imports: [
     CommonModule,
@@ -39,7 +43,9 @@ import { ListarIncidenteComponent } from './listar-incidente/listar-incidente.co
     CriarIncidenteComponent,
     CriarMembroComponent,
     CriarAtividadeComponent,
-    ListarIncidenteComponent
+    ListarIncidenteComponent,
+    ListarMembroComponent,
+    ListarAtividadeComponent
   ]
 })
 

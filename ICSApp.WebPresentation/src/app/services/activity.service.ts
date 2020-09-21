@@ -25,7 +25,19 @@ export class ActivityService {
 
   constructor(private http: HttpClient) { }
 
+  getAll() {
+    return this.http.get<any>(API + 'Activity');
+  }
+
   insert(request: ActivityModel) {
     return this.http.post<any>(API + 'Activity', request, httpOptions);
+  }
+
+  update(request: ActivityModel) {
+    return this.http.put<any>(API + 'Activity', request, httpOptions);
+  }
+
+  delete(request: number){
+    return this.http.delete<any>(API + 'Activity/' + request);
   }
 }

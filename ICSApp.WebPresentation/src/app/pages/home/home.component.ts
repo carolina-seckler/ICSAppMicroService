@@ -20,6 +20,8 @@ export class HomeComponent implements OnInit {
   displayNovoMembroModal = false;
   displayNovaAtividadeModal = false;
   displayListarIncidenteModal = false;
+  displayListarMembroModal = false;
+  displayListarAtividadeModal = false;
   isSalvar = false;
 
   constructor(private fb: FormBuilder,
@@ -61,7 +63,7 @@ export class HomeComponent implements OnInit {
   }
 
   listarMembros(): void {
-
+    this.displayListarMembroModal = true;
   }
 
   listarIncidentes(): void {
@@ -69,7 +71,7 @@ export class HomeComponent implements OnInit {
   }
 
   listarAtividades(): void {
-
+    this.displayListarAtividadeModal = true;
   }
 
   listarRecursos(): void {

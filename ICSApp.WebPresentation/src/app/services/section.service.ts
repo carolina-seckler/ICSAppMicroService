@@ -27,4 +27,8 @@ export class SectionService {
   getAll() {
     return this.http.get<any>(API + 'Section');
   }
+
+  getById(request: number){
+    return this.http.get<any>(API + 'Section/' + request);
+  }
 }

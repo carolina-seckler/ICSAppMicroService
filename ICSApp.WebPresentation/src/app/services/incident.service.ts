@@ -40,4 +40,8 @@ export class IncidentService {
   delete(request: number){
     return this.http.delete<any>(API + 'Incident/' + request);
   }
+
+  getById(request: number){
+    return this.http.get<any>(API + 'Incident/' + request);
+  }
 }
