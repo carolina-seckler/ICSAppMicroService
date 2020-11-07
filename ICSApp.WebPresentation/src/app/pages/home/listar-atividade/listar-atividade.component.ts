@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 import { ActivityModel } from 'src/app/models/activity';
 import { ActivityService } from 'src/app/services/activity.service';
-import { IncidentService, IncidentService } from 'src/app/services/incident.service';
+import { IncidentService } from 'src/app/services/incident.service';
 import { SectionService } from 'src/app/services/section.service';
 import { StatusService } from 'src/app/services/status.service';
 
